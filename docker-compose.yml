@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGO_URL=mongodb+srv://claraema7:Claraema1717@cluster0.lcypcnd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - PORT=3000
+      - SENTRY_DSN=https://0819af36823253002ec4d787354aa825@o4507301544591360.ingest.us.sentry.io/4507301548589056
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+    #volumes:
+     # - mongo-data:/data/db
+
+#volumes:
+ # mongo-data:
