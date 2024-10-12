@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 
 const express = require('express');
 const app = express();
@@ -37,7 +37,7 @@ app.use("/api/orders", orderRoute);
 
 app.listen(process.env.PORT, () => {
     console.log(`App listening on port ${process.env.PORT}`);
-    V1SwaggerDocs(app, process.env.PORT);
+    //V1SwaggerDocs(app, process.env.PORT);
 });
 
 module.exports = app;
