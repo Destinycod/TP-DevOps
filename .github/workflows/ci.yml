@@ -19,7 +19,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        choco install visualstudio2019buildtools --params "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --includeOptional"
+        choco install visualstudio2019buildtools --params "--add Microsoft.VisualStudio.Workload.VCTools"
         choco install python --version 3.8.0
         npm install -g node-gyp
     -  run: npm install
