@@ -1,5 +1,9 @@
 # Usa una imagen base oficial de Node.js
-FROM node:14
+FROM node:20
+
+ENV NEW_RELIC_NO_CONFIG_FILE=true
+ENV NEW_RELIC_DISTRIBUTED_TRACING_ENABLED=true
+ENV NEW_RELIC_LOG=stdout
 
 # Establece el directorio de trabajo en el contenedor
 WORKDIR /app

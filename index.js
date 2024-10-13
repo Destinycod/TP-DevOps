@@ -1,3 +1,4 @@
+require('newrelic');
 require("dotenv").config();
 
 const express = require('express');
@@ -41,3 +42,8 @@ app.listen(process.env.PORT, () => {
 });
 
 module.exports = app;
+
+/*docker run -e NEW_RELIC_LICENSE_KEY=a7adc4c9f98d7e6cf6710fc8e2876e60FFFFNRAL \
+  -e NEW_RELIC_APP_NAME="app-tp-devops" \
+  your_image_name:latest
+*/
