@@ -25,12 +25,22 @@ beforeAll(async () => {
       useUnifiedTopology: true,
     });
   }
+
+  // Inicia el servidor y guarda la referencia
+  server = app.listen(process.env.PORT || 3000, () => {
+    console.log(`App listening on port ${process.env.PORT || 3000}`);
+  });
 });
 
 afterAll(async () => {
   //await mongoose.connection.dropDatabase();
   await mongoose.connection.close();
   await mongoServer.stop();
+
+  // Cierra el servidor Express
+  server.close(() => {
+    console.log('Server closed');
+  });
 });
 
 describe('Cart API', () => {
